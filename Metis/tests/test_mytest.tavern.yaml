@@ -1,0 +1,87 @@
+---
+test_name: Make sure server doesnot gives All System information properly without token
+stages:
+  - name: without token
+    request:
+      url: http://127.0.0.1:3339/api/v1/systemstat/all_info
+      method: GET
+    response:
+      status_code: 400
+
+---
+test_name: Make sure server gives All System information properly with token
+stages:
+  - name: with token
+    request:
+      headers:
+        Authorization: Bearer b419c7fe-0672-40dc-95de-74e108a94d97
+      url: http://127.0.0.1:3339/api/v1/systemstat/all_info
+      method: GET
+    response:
+      status_code: 200
+
+---
+test_name: Make sure server doesnot gives CPU information properly without token
+stages:
+  - name: without token
+    request:
+      url: http://127.0.0.1:3339/api/v1/systemstat/cpu
+      method: GET
+    response:
+      status_code: 400
+
+---
+test_name: Make sure server gives CPU information properly with token
+stages:
+  - name: with token
+    request:
+      headers:
+        Authorization: Bearer b419c7fe-0672-40dc-95de-74e108a94d97
+      url: http://127.0.0.1:3339/api/v1/systemstat/cpu
+      method: GET
+    response:
+      status_code: 200
+
+---
+test_name: Make sure server doesnot gives ram information properly without token
+stages:
+  - name: without token
+    request:
+      url: http://127.0.0.1:3339/api/v1/systemstat/ram
+      method: GET
+    response:
+      status_code: 400
+
+---
+test_name: Make sure server gives ram information properly with token
+stages:
+  - name: with token
+    request:
+      headers:
+        Authorization: Bearer b419c7fe-0672-40dc-95de-74e108a94d97
+      url: http://127.0.0.1:3339/api/v1/systemstat/ram
+      method: GET
+    response:
+      status_code: 200
+
+---
+test_name: Make sure server doesnot gives Disk information properly without token
+stages:
+  - name: without token
+    request:
+      url: http://127.0.0.1:3339/api/v1/systemstat/disk
+      method: GET
+    response:
+      status_code: 400
+
+---
+test_name: Make sure server gives disk information properly with token
+stages:
+  - name: with token
+    request:
+      headers:
+        Authorization: Bearer b419c7fe-0672-40dc-95de-74e108a94d97
+      url: http://127.0.0.1:3339/api/v1/systemstat/disk
+      method: GET
+    response:
+      status_code: 200
